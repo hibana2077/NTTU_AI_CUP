@@ -3,7 +3,7 @@
     import { Button } from 'flowbite-svelte';
 </script>
   
-<Section name="page404">
+<Section name="page404" class="flex flex-col items-center justify-center py-12">
     <Page404>
       <svelte:fragment slot="h1">404</svelte:fragment>
       <svelte:fragment slot="paragraph">
@@ -13,4 +13,3 @@
       </svelte:fragment>
     </Page404>
 </Section>
-
