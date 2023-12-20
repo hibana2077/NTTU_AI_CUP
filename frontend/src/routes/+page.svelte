@@ -2,7 +2,10 @@
     import { Section, News, HeroHeader, HeroBody } from 'flowbite-svelte-blocks';
     import { Button } from 'flowbite-svelte';
     import { ArrowRightSolid, VideoSolid } from 'flowbite-svelte-icons';
-  </script>
+    import { Footer, FooterBrand, FooterLinkGroup, FooterLink, FooterCopyright, FooterIcon } from 'flowbite-svelte';
+
+    let logo = "https://flowbite-svelte-blocks.vercel.app/images/logo.svg";
+</script>
   
   <Section name="heroDefault">
     <News>
@@ -49,3 +52,19 @@
       </div>
     </HeroBody>
   </Section>
+
+  <footer class="mt-16 bg-white dark:bg-gray-800">
+    <Footer footerType="socialmedia">
+      <div class="mx-auto max-w-screen-xl text-center">
+        <FooterBrand href="https://flowbite.com" src={logo} alt="Flowbite Logo" name="AI Judge" aClass="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white" />
+        <p class="my-6 text-gray-500 dark:text-gray-400">開源的AI競賽平台</p>
+        <FooterLinkGroup ulClass="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">About</FooterLink>
+          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Campaigns</FooterLink>
+          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Blog</FooterLink>
+          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">FAQs</FooterLink>
+          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Contact</FooterLink>
+        </FooterLinkGroup>
+      </div>
+    </Footer>
+  </footer>
