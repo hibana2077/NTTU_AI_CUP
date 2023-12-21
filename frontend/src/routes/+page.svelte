@@ -1,10 +1,38 @@
 <script>
-    import { Section, News, HeroHeader, HeroBody } from 'flowbite-svelte-blocks';
+    import { Section, News } from 'flowbite-svelte-blocks';
     import { Button } from 'flowbite-svelte';
-    import { ArrowRightSolid, VideoSolid } from 'flowbite-svelte-icons';
-    import { Footer, FooterBrand, FooterLinkGroup, FooterLink, FooterCopyright, FooterIcon } from 'flowbite-svelte';
+    import { ArrowRightSolid, FileLinesSolid } from 'flowbite-svelte-icons';
+    import { Card } from 'flowbite-svelte';
+    import { ArrowRightOutline } from 'flowbite-svelte-icons';
+    import { Footer, FooterBrand, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
+    import { Timeline, TimelineItem } from 'flowbite-svelte';
+    import { CalendarWeekSolid } from 'flowbite-svelte-icons';
+    import { A1Solid, A2Solid, A3Solid } from 'svelte-awesome-icons';
 
     let logo = "https://flowbite-svelte-blocks.vercel.app/images/logo.svg";
+    let compition_data = [
+      {
+        "name": "房價預測",
+        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "https://media.discordapp.net/attachments/1096723815914029066/1187039709671723038/header.png?ex=65956fe0&is=6582fae0&hm=40daf605e66d7dbebb4748d45b9e4052ddbb9161faa6d4354b8639e091f9f771&=&format=webp&quality=lossless",
+        "link": "/compition/1",
+        "new": true
+      },
+      {
+        "name": "手寫數字辨識",
+        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "https://media.discordapp.net/attachments/1096723815914029066/1187039742013997156/header.png?ex=65956fe8&is=6582fae8&hm=48c28581f40478d804f16cdc08b8e95cb958caf3cb09b498ec0a4dc4b9dd0b13&=&format=webp&quality=lossless",
+        "link": "/compition/2",
+        "new": true
+      },
+      {
+        "name": "蛋白質功能預測",
+        "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "image": "https://media.discordapp.net/attachments/1096723815914029066/1187039819784785930/header.png?ex=65956ffb&is=6582fafb&hm=411970282893c4b2eac66f1a8a8e372172821966267729b93b703f900d486fa8&=&format=webp&quality=lossless",
+        "link": "/compition/3",
+        "new": true
+      }
+    ];
 </script>
   
   <Section name="heroDefault">
@@ -12,45 +40,72 @@
       <span class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span>
       <span class="text-sm font-medium">Flowbite is out! See what's new</span>
     </News>
-    <HeroHeader>
-      <svelte:fragment slot="h1">We invest in the world’s potential</svelte:fragment>
-      <svelte:fragment slot="paragraph">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</svelte:fragment>
-    </HeroHeader>
+
+    <h1 class="mb-4 text-3xl font-semibold text-gray-900 dark:text-white">競賽</h1>
+
+    <div class='grid gap-8 mb-2 lg:mb-16 md:grid-cols-3'>
+      {#each compition_data as compition}
+        <Card img={compition.image} href={compition.link} class="flex flex-col items-start justify-start p-2">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{compition.name}</h5>
+            <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">{compition.description}</p>
+            <Button>
+              Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+            </Button>
+        </Card>
+      {/each}
+    </div>
   
     <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
       <a href="/">
         <Button size="lg" color="red">
-          Learn more <ArrowRightSolid size="md" class="ml-2 -mr-1" />
+          更多比賽 <ArrowRightSolid size="md" class="ml-2 -mr-1" />
         </Button>
       </a>
       <a href="/">
         <Button size="lg" color="light">
-          <VideoSolid size="xs" class="mr-2 -ml-1" />
-          Watch video
+          <FileLinesSolid size="xs" class="mr-2 -ml-1" />
+          說明文件
         </Button>
       </a>
     </div>
-    <HeroBody>
-      <svelte:fragment slot="head">FEATURED IN</svelte:fragment>
-  
-      <div class="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between">
-        <a href="/" class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
-            <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-                <path fill-rule="evenodd" d="M19.7 3.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.84c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.84A4.225 4.225 0 0 0 .3 3.038a30.148 30.148 0 0 0-.2 3.206v1.5c.01 1.071.076 2.142.2 3.206.094.712.363 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.15 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965c.124-1.064.19-2.135.2-3.206V6.243a30.672 30.672 0 0 0-.202-3.206ZM8.008 9.59V3.97l5.4 2.819-5.4 2.8Z" clip-rule="evenodd"/>
-            </svg>
-        </a>
-        <a href="/" class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
-            <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
-                <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
-            </svg>
-        </a>
-        <a href="/" class="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
-            <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
-                <path d="M9.782.72a4.773 4.773 0 0 0-4.8 4.173 3.43 3.43 0 0 1 2.741-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.934-2.865 3.137-3.921-.969 1.379-2.44 2.207-4.259 1.231C14.488 3.365 13.551.6 9.782.72ZM4.8 6.979A4.772 4.772 0 0 0 0 11.151a3.43 3.43 0 0 1 2.745-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.933-2.865 3.137-3.921-.97 1.379-2.44 2.208-4.259 1.231C9.51 9.623 8.573 6.853 4.8 6.979Z"/>
-            </svg>
-        </a>
-      </div>
-    </HeroBody>
+
+    <h1 class="mb-4 text-3xl font-semibold text-gray-900 dark:text-white">如何報名</h1>
+
+    <Timeline order="horizontal">
+      <TimelineItem title="創建帳戶" date="">
+        <svelte:fragment slot="icon">
+          <div class="flex items-center">
+            <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              <A1Solid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+            </div>
+            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+          </div>
+        </svelte:fragment>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
+      </TimelineItem>
+      <TimelineItem title="加入參賽隊伍" date="">
+        <svelte:fragment slot="icon">
+          <div class="flex items-center">
+            <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              <A2Solid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+            </div>
+            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+          </div>
+        </svelte:fragment>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
+      </TimelineItem>
+      <TimelineItem title="比賽開始" date="">
+        <svelte:fragment slot="icon">
+          <div class="flex items-center">
+            <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              <A3Solid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
+            </div>
+            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
+          </div>
+        </svelte:fragment>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
+      </TimelineItem>
+    </Timeline>
   </Section>
 
   <footer class="mt-16 bg-white dark:bg-gray-800">
@@ -58,13 +113,6 @@
       <div class="mx-auto max-w-screen-xl text-center">
         <FooterBrand href="https://flowbite.com" src={logo} alt="Flowbite Logo" name="AI Judge" aClass="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white" />
         <p class="my-6 text-gray-500 dark:text-gray-400">開源的AI競賽平台</p>
-        <FooterLinkGroup ulClass="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
-          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">About</FooterLink>
-          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Campaigns</FooterLink>
-          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Blog</FooterLink>
-          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">FAQs</FooterLink>
-          <FooterLink liClass="" aClass="mr-4 hover:underline md:mr-6" href="/">Contact</FooterLink>
-        </FooterLinkGroup>
       </div>
     </Footer>
   </footer>
