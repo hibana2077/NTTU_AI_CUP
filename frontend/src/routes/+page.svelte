@@ -9,7 +9,7 @@
     import { CalendarWeekSolid } from 'flowbite-svelte-icons';
     import { A1Solid, A2Solid, A3Solid } from 'svelte-awesome-icons';
 
-    let logo = "https://flowbite-svelte-blocks.vercel.app/images/logo.svg";
+    let logo = "./logo.png"
     let compition_data = [
       {
         "name": "房價預測",
@@ -81,7 +81,7 @@
             <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
           </div>
         </svelte:fragment>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">可以使用 Google 以及 Apple 帳號註冊與登入，或是自行註冊帳號</p>
       </TimelineItem>
       <TimelineItem title="加入參賽隊伍" date="">
         <svelte:fragment slot="icon">
@@ -92,7 +92,7 @@
             <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
           </div>
         </svelte:fragment>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400"> 透過過濾器選擇有興趣的比賽，或是透過輸入比賽邀請碼加入私人比賽</p>
       </TimelineItem>
       <TimelineItem title="比賽開始" date="">
         <svelte:fragment slot="icon">
@@ -111,7 +111,7 @@
   <footer class="mt-16 bg-white dark:bg-gray-800">
     <Footer footerType="socialmedia">
       <div class="mx-auto max-w-screen-xl text-center">
-        <FooterBrand href="https://flowbite.com" src={logo} alt="Flowbite Logo" name="AI Judge" aClass="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white" />
+        <FooterBrand href="https://ai-judges.com" src={logo} alt="AI Judge Logo" name="AI Judge" aClass="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white" />
         <p class="my-6 text-gray-500 dark:text-gray-400">開源的AI競賽平台</p>
       </div>
     </Footer>

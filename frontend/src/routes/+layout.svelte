@@ -8,12 +8,13 @@
     let school_name = "NTTU"
     let navClass = 'bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800';
     let navDivClass = 'flex flex-wrap justify-between items-center mx-auto max-w-screen-xl';
-    let logo = "https://flowbite-svelte-blocks.vercel.app/images/logo.svg";
+    let logo = "./logo.png"
+
 </script>
 
 <Navbar rounded color="form" let:hidden let:toggle fluid={false} {navClass} {navDivClass}>
     <NavBrand href="/">
-      <img src={logo} class="ml-3 me-3 h-6 sm:h-9" alt="Flowbite Logo" />
+      <img src={logo} class="ml-3 me-3 h-6 sm:h-9" alt="Logo" />
       <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white">{school_name} AJ</span>
     </NavBrand>
     <div class="flex items-center lg:order-2">
