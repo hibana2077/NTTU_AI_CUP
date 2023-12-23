@@ -2,8 +2,6 @@
     import "../app.pcss";
     import { Navbar, NavBrand, NavHamburger, NavUl, NavLi, Button } from 'flowbite-svelte';
     import { DarkMode } from 'flowbite-svelte';
-    import { Section } from 'flowbite-svelte-blocks';
-    import { Footer, FooterBrand, FooterLinkGroup, FooterLink, FooterCopyright, FooterIcon } from 'flowbite-svelte';
     
     let school_name = "NTTU"
     let navClass = 'bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800';
@@ -26,8 +24,8 @@
     <NavUl>
       <NavLi href="/" active={true}>首頁</NavLi>
       <NavLi href="/compition">競賽</NavLi>
-      <NavLi href="/docs/components/navbar">資源中心</NavLi>
-      <NavLi href="/pricing">社區互動</NavLi>
+      <NavLi href="/resource">資源中心</NavLi>
+      <NavLi href="/community">社區互動</NavLi>
       <NavLi href="/contact">聯絡我們</NavLi>
     </NavUl>
 </Navbar>

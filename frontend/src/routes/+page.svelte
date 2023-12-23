@@ -6,7 +6,6 @@
     import { ArrowRightOutline } from 'flowbite-svelte-icons';
     import { Footer, FooterBrand, FooterLinkGroup, FooterLink } from 'flowbite-svelte';
     import { Timeline, TimelineItem } from 'flowbite-svelte';
-    import { CalendarWeekSolid } from 'flowbite-svelte-icons';
     import { A1Solid, A2Solid, A3Solid } from 'svelte-awesome-icons';
 
     let logo = "./logo.png"
