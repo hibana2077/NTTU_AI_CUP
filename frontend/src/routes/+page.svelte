@@ -68,43 +68,45 @@
       </a>
     </div>
 
-    <h1 class="mb-4 text-3xl font-semibold text-gray-900 dark:text-white">如何報名</h1>
+    <h1 class="mb-4 text-3xl font-semibold text-gray-900 dark:text-white">如何參加比賽</h1>
 
-    <Timeline order="horizontal">
-      <TimelineItem title="創建帳戶" date="">
-        <svelte:fragment slot="icon">
-          <div class="flex items-center">
-            <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <A1Solid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
-            </div>
-            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
-          </div>
-        </svelte:fragment>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">可以使用 Google 以及 Apple 帳號註冊與登入，或是自行註冊帳號</p>
-      </TimelineItem>
-      <TimelineItem title="加入參賽隊伍" date="">
-        <svelte:fragment slot="icon">
-          <div class="flex items-center">
-            <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <A2Solid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
-            </div>
-            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
-          </div>
-        </svelte:fragment>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400"> 透過過濾器選擇有興趣的比賽，或是透過輸入比賽邀請碼加入私人比賽</p>
-      </TimelineItem>
-      <TimelineItem title="比賽開始" date="">
-        <svelte:fragment slot="icon">
-          <div class="flex items-center">
-            <div class="flex z-10 justify-center items-center w-6 h-6 bg-primary-200 rounded-full ring-0 ring-white dark:bg-primary-900 sm:ring-8 dark:ring-gray-900 shrink-0">
-              <A3Solid class="w-3 h-3 text-primary-600 dark:text-primary-400" />
-            </div>
-            <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700" />
-          </div>
-        </svelte:fragment>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Get started with dozens of web components and interactive elements.</p>
-      </TimelineItem>
-    </Timeline>
+    <div class='grid gap-8 mb-2 lg:mb-16 md:grid-cols-3'>
+      <Card class="flex flex-col items-start justify-start p-2">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Step 1</h5>
+          <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">透過 Google / GitHub 註冊帳號</p>
+          <Button>
+            註冊帳號 <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+          </Button>
+      </Card>
+      <Card class="flex flex-col items-start justify-start p-2">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Step 2</h5>
+          <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">選擇有興趣的競賽，或是透過邀請碼加入競賽</p>
+          <Button>
+            選擇競賽 <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+          </Button>
+      </Card>
+      <Card class="flex flex-col items-start justify-start p-2">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Step 3</h5>
+          <p class="mb-4 font-normal text-gray-700 dark:text-gray-400 leading-tight">透過模型來預測答案，並上傳預測結果</p>
+          <Button>
+            上傳解答 <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+          </Button>
+      </Card>
+    </div>
+
+    <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+      <a href="/">
+        <Button size="lg" color="red">
+          更多比賽 <ArrowRightSolid size="md" class="ml-2 -mr-1" />
+        </Button>
+      </a>
+      <a href="/">
+        <Button size="lg" color="light">
+          <FileLinesSolid size="xs" class="mr-2 -ml-1" />
+          說明文件
+        </Button>
+      </a>
+    </div>
   </Section>
 
   <footer class="mt-16 bg-white dark:bg-gray-800">
