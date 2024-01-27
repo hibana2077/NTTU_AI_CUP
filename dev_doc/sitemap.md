@@ -2,16 +2,16 @@
  * @Author: hibana2077 hibana2077@gmaill.com
  * @Date: 2023-12-19 16:03:57
  * @LastEditors: hibana2077 hibana2077@gmaill.com
- * @LastEditTime: 2023-12-19 16:04:41
+ * @LastEditTime: 2024-01-27 16:50:14
  * @FilePath: /NTTU_AI_CUP/dev_doc/sitemap.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 # Sitemap
 
 1. **首頁**
-   - 介紹平台和比賽概述
-   - 最新消息和更新
-   - 登入/註冊入口
+   - [x] 介紹平台和比賽概述
+   - [x] 最新消息和更新
+   - [x] 登入/註冊入口
 
 2. **比賽信息**
    - 當前和即將進行的比賽列表

@@ -9,18 +9,18 @@
 	let card_count = 9;
 
 	import { Stepper, Step } from '@skeletonlabs/skeleton';
-	
+
 </script>
 
 
 <div class="flex flex-col items-center justify-center mt-4">
-	<h1 class="h1 mt-2 hover:animate-bounce">
+	<h1 class="h1 mt-2 hover:animate-pulse">
 		<span class="bg-gradient-to-br from-blue-500 to-cyan-300 bg-clip-text text-transparent box-decoration-clone">{noun1}</span>
 	</h1>
-	<h1 class="h1 mt-2 hover:animate-bounce">
+	<h1 class="h1 mt-2 hover:animate-pulse">
 		<span class="bg-gradient-to-br from-red-500 to-yellow-500 bg-clip-text text-transparent box-decoration-clone">{noun2}</span>
 	</h1>
-	<h1 class="h1 mt-2 hover:animate-bounce">
+	<h1 class="h1 mt-2 hover:animate-pulse">
 		<span class="bg-gradient-to-br from-pink-500 to-violet-500 bg-clip-text text-transparent box-decoration-clone">{noun3}</span>
 	</h1>
 	
@@ -60,4 +60,4 @@
 			<!-- ... -->
 		</Stepper>
 	</div>
-</div>
+</div>   
