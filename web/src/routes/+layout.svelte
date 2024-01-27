@@ -29,7 +29,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<a href="./" class="text-xl uppercase">AI CUP</a>
+				<a href="./" class="text-xl uppercase ml-2">AI CUP</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
