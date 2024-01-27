@@ -1,9 +1,48 @@
-<script>
+<script lang="ts">
+    import { Toast, getToastStore } from '@skeletonlabs/skeleton';
+	import type { ToastSettings, ToastStore } from '@skeletonlabs/skeleton';
     let username = '';
     let password = '';
     let email = '';
 
     let year = new Date().getFullYear();
+    const toastStore = getToastStore();
+    
+    function signup() {
+        if (username == '') {
+            const username_empty_t: ToastSettings = {
+                message: '⚠️ Error: Please input a username',
+            };
+            toastStore.trigger(username_empty_t);
+        } else if (password == '') {
+            const password_empty_t: ToastSettings = {
+                message: '⚠️ Error: Please input a password',
+            };
+            toastStore.trigger(password_empty_t);
+        } else if (password.length < 8) {
+            const password_short_t: ToastSettings = {
+                message: '⚠️ Error: Please input at least 8 characters',
+            };
+            toastStore.trigger(password_short_t);
+        } else if (email == '') {
+            const email_empty_t: ToastSettings = {
+                message: '⚠️ Error: Please input an email',
+            };
+            toastStore.trigger(email_empty_t);
+        } else if (!email.includes('@')) {
+            const email_invalid_t: ToastSettings = {
+                message: '⚠️ Error: Please input a valid email',
+            };
+            toastStore.trigger(email_invalid_t);
+        } else {
+            // Add API logic here
+            const signup_success_t: ToastSettings = {
+                message: '✅ Sign up successfully!',
+            };
+            toastStore.trigger(signup_success_t);
+            window.location.href = './login';
+        }
+    }
 </script>
 
 <!-- signup text -->
@@ -40,7 +79,9 @@
                     placeholder="******"
                     bind:value={password}
                 />
-                <p class="text-red-500 text-xs italic">Please input a password.</p>
+                {#if password != '' && password.length < 8}
+                    <p class="text-red-500 text-xs italic">Please input at least 8 characters.</p>
+                {/if}
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
@@ -53,24 +94,21 @@
                     placeholder="aicup@example.com"
                     bind:value={email}
                 />
-                <p class="text-red-500 text-xs italic">Please input a email.</p>
+                {#if email != '' && !email.includes('@')}
+                    <p class="text-red-500 text-xs italic">Please input a valid email.</p>
+                {/if}
             </div>
             <div class="flex items-center justify-between">
                 <button
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="button"
                     on:click={() => {
-                        console.log(username, password);
+                        console.log(username, password, email);
+                        signup();
                     }}
                 >
                     Sign Up
                 </button>
-                <a
-                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-                    href="#"
-                >
-                    Forgot Password?
-                </a>
                 <a
                     class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
                     href="./login"

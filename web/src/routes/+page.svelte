@@ -46,8 +46,8 @@
 	<div class="">
 		<Stepper>
 			<Step>
-				<svelte:fragment slot="header">{header}</svelte:fragment>
-				{content}
+				<svelte:fragment slot="header">Register</svelte:fragment>
+				<p>Use your email to register an account.</p>
 			</Step>
 			<Step>
 				<svelte:fragment slot="header">{ header }</svelte:fragment>

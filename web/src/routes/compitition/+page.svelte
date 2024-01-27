@@ -1,0 +1,1 @@
+<h1 class="flex justify-center text-4xl font-bold text-gray-200 my-12">Compitition</h1>
