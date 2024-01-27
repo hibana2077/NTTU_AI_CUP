@@ -16,7 +16,7 @@
 
 	const drawerStore = getDrawerStore();
 	const drawerSettings: DrawerSettings = {
-		id: 'example-3',
+		id: 'profile-drawer',
 		// Provide your property overrides:
 		position: 'right',
 		bgDrawer: 'bg-purple-900 text-white',
@@ -62,7 +62,29 @@
 
 
 <Toast />
-<Drawer />
+<Drawer>
+	{#if $drawerStore.id === 'profile-drawer'}
+		<div class="flex flex-col items-center justify-center mt-8">
+			<Avatar
+				initials="TS"
+				border="border-4 border-surface-300-600-token"
+				width="w-24"
+				on:click={() => {
+					drawerStore.close();
+				}}
+			/>
+			<h1 class="text-2xl font-bold text-gray-200 mt-4">Ting-Sheng Lin</h1>
+			<p class="text-gray-400">
+				Computer Science Student
+			</p>
+			<p class="text-gray-400">
+				University of California, Irvine
+			</p>
+			<h2 class="text-xl font-bold text-gray-200 mt-4">Badges</h2>
+			
+		</div>
+	{/if}
+</Drawer>
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">
