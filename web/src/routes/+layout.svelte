@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 
 	import { initializeStores } from '@skeletonlabs/skeleton';
 
@@ -58,6 +59,8 @@
 		login_status.set(false);
 		window.location.href = './';
 	}
+
+	let valueSingle: string = 'books';
 </script>
 
 
@@ -73,6 +76,11 @@
 					drawerStore.close();
 				}}
 			/>
+			<button
+				class="btn btn-md variant-ghost-surface my-4"
+				on:click={() => { Logout();}}
+			>Logout
+			</button>
 			<h1 class="text-2xl font-bold text-gray-200 mt-4">Ting-Sheng Lin</h1>
 			<p class="text-gray-400">
 				Computer Science Student
@@ -80,8 +88,6 @@
 			<p class="text-gray-400">
 				University of California, Irvine
 			</p>
-			<h2 class="text-xl font-bold text-gray-200 mt-4">Badges</h2>
-			
 		</div>
 	{/if}
 </Drawer>
@@ -111,11 +117,24 @@
 					Documents
 				</a>
 				{#if $login_status}
-					<button
+					<a
 						class="btn btn-md variant-ghost-surface"
-						on:click={() => { Logout();}}
-					>Logout
-					</button>
+						href="./community"
+						rel="noreferrer"
+						>Community
+					</a>
+					<a
+						class="btn btn-md variant-ghost-surface"
+						href="./resources"
+						rel="noreferrer"
+						>Resources
+					</a>
+					<a
+						class="btn btn-md variant-ghost-surface"
+						href="./workspace"
+						rel="noreferrer"
+						>Workspace
+					</a>
 					<Avatar
 						initials="TS"
 						border="border-4 border-surface-300-600-token hover:!border-primary-500"
