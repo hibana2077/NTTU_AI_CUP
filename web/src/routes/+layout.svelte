@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 
 	import { initializeStores } from '@skeletonlabs/skeleton';
 
@@ -59,8 +58,6 @@
 		login_status.set(false);
 		window.location.href = './';
 	}
-
-	let valueSingle: string = 'books';
 </script>
 
 
@@ -103,7 +100,6 @@
 				<a
 					class="btn btn-md variant-ghost-surface"
 					href="./compitition"
-					target="_blank"
 					rel="noreferrer"
 				>
 					Compitition
