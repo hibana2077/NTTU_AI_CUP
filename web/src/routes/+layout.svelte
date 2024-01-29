@@ -75,6 +75,13 @@
 			/>
 			<button
 				class="btn btn-md variant-ghost-surface my-4"
+				on:click={() => {
+					window.location.href="./profile"
+				}}
+			>Profile
+			</button>
+			<button
+				class="btn btn-md variant-ghost-surface my-4"
 				on:click={() => { Logout();}}
 			>Logout
 			</button>
@@ -142,7 +149,7 @@
 					/>
 				{:else}
 					<a
-						class="btn btn-sm variant-ghost-surface"
+						class="btn btn-md variant-ghost-surface"
 						href="./login"
 						rel="noreferrer"
 						>Login
