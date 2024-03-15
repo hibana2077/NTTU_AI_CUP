@@ -1,0 +1,27 @@
+---
+var { contest_title, contest_description } = Astro.props;
+contest_title = contest_title || "News Title";
+contest_description = contest_description || "News Description";
+---
+
+<div class="flex flex-col ml-2">
+    <div class="flex flex-row justify-between">
+        <div class="flex flex-col">
+            <h2 class="text-xl font-bold">
+                <a class="link link-hover">
+                    { contest_title }
+                </a>
+            </h2>
+            <p class="text-sm max-w-xs">
+                { contest_description }
+            </p>
+        </div>
+        <div class="flex flex-col">
+            <div class="flex flex-row justify-end my-auto">
+                <a class="link link-hover">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

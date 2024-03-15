@@ -1,0 +1,20 @@
+---
+var { news_title, news_description } = Astro.props;
+news_title = news_title || "News Title";
+news_description = news_description || "News Description";
+---
+
+<div class="flex flex-col ml-2">
+    <div class="flex flex-row justify-between">
+        <div class="flex flex-col">
+            <h2 class="text-xl font-bold">
+                <a class="link link-hover">
+                    { news_title }
+                </a>
+            </h2>
+            <p class="text-sm">
+                { news_description }
+            </p>
+        </div>
+    </div>
+</div>

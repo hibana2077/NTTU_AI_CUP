@@ -1,51 +1,44 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+import { FaRegUser } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { TfiCup } from "react-icons/tfi";
+import { IconContext } from "react-icons";
+import { MdOutlineContactSupport } from "react-icons/md";
+import { GrResources } from "react-icons/gr";
+import { FaForumbee } from "react-icons/fa6";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
+<div class="mx-16">
+	<div class="navbar bg-base-100 border-b-2 border-primary rounded-xl">
+		<div class="navbar-start">
+		  <div class="dropdown">
+			<div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+			  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+			</div>
+			<ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+			  <li><a><FaHome client:visible/>Homepage</a></li>
+			  <li><a><TfiCup client:visible/>Contest</a></li>
+			  <li><a><FaForumbee client:visible/>Community</a></li>
+			  <li><a><GrResources client:visible/>Resources</a></li>
+			  <li><a><MdOutlineContactSupport client:visible/>Contact</a></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="navbar-center">
+		  <a class="btn btn-ghost text-xl">AI CUP</a>
+		</div>
+		<div class="navbar-end">
+		  <button class="btn btn-ghost btn-circle">
+			<div class="indicator">
+				<IconContext.Provider value={{ className: "h-5 w-5" }} client:visible>
+					<div>
+						<FaRegUser client:visible/>
+					</div>
+				</IconContext.Provider>
+				<span class="badge badge-xs badge-primary indicator-item"></span>
+			</div>
+		  </button>
+		</div>
+	</div>
+</div>
+<slot />
