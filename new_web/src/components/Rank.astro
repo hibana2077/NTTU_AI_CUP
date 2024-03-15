@@ -1,0 +1,17 @@
+---
+import { FaRankingStar } from "react-icons/fa6";
+import RankUserCard from "./RankUserCard.astro";
+---
+
+<div class=" bg-slate-700 p-4 rounded-lg min-w-unit-sm my-4 mx-16">
+    <div class="flex items-center gap-2 ml-2">
+        <FaRankingStar className='text-2xl' client:visible/>
+        <h1 class="text-2xl font-bold">Rank</h1>
+    </div>
+    <div class="divider"></div>
+    <div class="flex flex-col gap-2">
+        <RankUserCard />
+        <RankUserCard />
+        <RankUserCard />
+    </div>
+</div>

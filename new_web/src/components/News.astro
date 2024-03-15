@@ -1,9 +1,13 @@
 ---
 import NewsCard from './NewsCard.astro'
+import { FaNewspaper } from "react-icons/fa6";
 ---
 
-<div class=" bg-slate-700  p-4 rounded-lg min-w-unit-sm my-4 mx-16">
-    <h1 class="text-2xl font-bold ml-2">News</h1>
+<div class=" bg-slate-700 p-4 rounded-lg min-w-unit-sm my-4 mx-16">
+    <div class="flex items-center gap-2 ml-2">
+        <FaNewspaper className='text-2xl' client:visible/>
+        <h1 class="text-2xl font-bold">News</h1>
+    </div>
     <div class="divider"></div>
     <div class="flex flex-col gap-2">
         <NewsCard news_title="TEST1"/>
